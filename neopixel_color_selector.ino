@@ -11,8 +11,7 @@ uint8_t brightness = 0;
 
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
-void setup()
-{
+void setup() {
   pinMode(SW_pin, INPUT);
   digitalWrite(SW_pin, HIGH);
   strip.begin();
@@ -20,12 +19,10 @@ void setup()
   strip.show();
 }
 
-void loop()
-{
+void loop() {
   bool pressed = (digitalRead(SW_pin) == LOW) ? true : false;
 
-  if (pressed and brightness < MAX_BRIGHTNESS)
-  {
+  if (pressed and brightness < MAX_BRIGHTNESS) {
     brightness += 1;
   }
   if (not pressed and brightness > 0) {
